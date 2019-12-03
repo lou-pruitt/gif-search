@@ -1,3 +1,4 @@
 @import 'normalize.css';
 @import 'modules/base/_global';
 @import 'modules/_header';
+@import 'modules/_main';
