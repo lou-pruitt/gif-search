@@ -9,8 +9,21 @@
   </head>
   <body>
     <header class="header">
-      <h1>Gif Search</h1>
+      <h1>Gipher</h1>
     </header>
+    <main>
+      <form id="query-form" class="form-container" onsubmit="runTimer(query)">
+        <label for="query">Keyword</label>
+        <input
+          name="query"
+          id="query"
+          type="text"
+          autocomplete="off"
+          required
+        />
+        <input type="submit" id="button" value="Search" />
+      </form>
+    </main>
     <script src="bundled.js"></script>
   </body>
 </html>
