@@ -2,27 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      user-scalable="no"
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="Description" content="Author: Lou Pruitt, App: Gif search" />
     <title>Gif Search</title>
   </head>
   <body>
-    <header class="header">
-      <h1>Gipher</h1>
+    <header id="header" class="header">
+      <h1 id="h1">Gipher</h1>
     </header>
-    <main>
-      <form id="query-form" class="form-container" onsubmit="runTimer(query)">
-        <label for="query">Keyword</label>
-        <input
-          name="query"
-          id="query"
-          type="text"
-          autocomplete="off"
-          required
-        />
-        <input type="submit" id="button" value="Search" />
-      </form>
+    <main class="main">
+      <input
+        name="query"
+        id="query"
+        placeholder="Keyword: cat, funny etc."
+        class="main__query"
+        type="text"
+        autocomplete="off"
+        required
+      />
+      <button class="main__search-btn">Search</button>
+      <div class="main__img-container">
+        <img id="gif" alt="" class="main__gif" src="" />
+      </div>
     </main>
     <script src="bundled.js"></script>
   </body>
