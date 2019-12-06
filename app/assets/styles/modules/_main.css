@@ -1,4 +1,23 @@
-.form-container {
-  display: grid;
-  justify-items: center;
+.main {
+  display: flex;
+  flex-direction: column;
+  &__search-btn {
+    margin: 10px auto 0px;
+    background-color: black;
+    border-color: white;
+    border-radius: 10%;
+    color: white;
+  }
+  &__img-container {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  &__gif {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+  }
 }
