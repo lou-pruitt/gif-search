@@ -3,4 +3,8 @@
   display: flex;
   justify-content: center;
   background-color: crimson;
+  padding-bottom: 5px;
+  &__title {
+    margin-bottom: 0;
+  }
 }
