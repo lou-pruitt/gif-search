@@ -2,16 +2,32 @@ import apiConfig from './apiKeys';
 class UserInput {
   constructor() {
     this.searchBtn = document.querySelector('.main__search-btn');
+    this.imgContainerWidth = window.innerWidth;
+    console.log('Window width: ', this.windowWidth);
     this.eventHandlers();
+    this.setWidth();
   }
 
   eventHandlers() {
     this.searchBtn.addEventListener('click', () => this.searchTerm());
   }
 
+  setWidth() {
+    this.gifArea = document.getElementById(
+      'gif-area'
+    ).style.width = this.windowWidth;
+  }
+
   searchTerm() {
-    this.query = document.getElementById('query').value;
-    this.gifSearch();
+    this.validInput = document.getElementById('query').validity.valid;
+    if (this.validInput) {
+      this.query = document.getElementById('query').value;
+      this.gifSearch();
+    } else {
+      this.query = 'random';
+      console.log(this.query);
+      this.gifSearch();
+    }
   }
 
   gifSearch() {
