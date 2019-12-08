@@ -1,3 +1,4 @@
+import apiConfig from './apiKeys';
 class UserInput {
   constructor() {
     this.searchBtn = document.querySelector('.main__search-btn');
@@ -11,12 +12,10 @@ class UserInput {
   searchTerm() {
     this.query = document.getElementById('query').value;
     this.gifSearch();
-    console.log('searchTerm(): success ');
   }
 
   gifSearch() {
-    console.log('gifSearch(): success ', this.query);
-    let apiKey = 'dc6zaTOxFJmzC';
+    let apiKey = apiConfig.giphyKey;
     let searchEndPoint = 'https://api.giphy.com/v1/gifs/search?';
     let limit = 1;
     let rating = 'pg';
@@ -32,14 +31,14 @@ class UserInput {
         console.log(json, 'json');
       })
       .catch(err => {
+        this.gifSearch();
         console.log(err, 'error');
       });
-    this.injectGifs();
     this.url = url;
   }
 
   randomNumber() {
-    let number = Math.floor(Math.random() * 100);
+    let number = Math.floor(Math.random() * 200);
     return number;
   }
 
@@ -51,14 +50,24 @@ class UserInput {
       });
     this.gifData = json.data[0];
     this.imgAlt = json.data[0].title;
+    this.createGifElement();
+  }
+
+  createGifElement() {
+    this.gifArea = document.getElementById('gif-area');
+    this.gifElement = document.createElement('img');
+    this.gifElement.classList.add('main__gif');
+    this.gifElement.src = this.theGif;
+    this.gifElement.alt = this.imgAlt;
     this.injectGifs();
   }
 
   injectGifs() {
-    console.log(this.imgAlt, 'imgAlt');
-    this.changeSrc = document.getElementById('gif');
-    this.changeSrc.src = this.theGif;
-    this.changeSrc.alt = this.imgAlt;
+    if (this.gifArea.hasChildNodes()) {
+      this.gifArea.prepend(this.gifElement);
+    } else {
+      this.gifArea.appendChild(this.gifElement);
+    }
   }
 }
 
