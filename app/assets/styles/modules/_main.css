@@ -1,6 +1,9 @@
 .main {
   display: flex;
   flex-direction: column;
+  &__label {
+    text-align: center;
+  }
   &__search-btn {
     margin: 10px auto 0px;
     background-color: black;
@@ -10,7 +13,6 @@
   }
   &__img-container {
     height: auto;
-    margin: 5px;
     text-align: center;
   }
   &__gif {

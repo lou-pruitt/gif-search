@@ -1,4 +1,5 @@
 @import 'normalize.css';
-@import 'modules/base/_global';
+@import 'base/_global';
+@import 'base/_mixins.css';
 @import 'modules/_header';
 @import 'modules/_main';
