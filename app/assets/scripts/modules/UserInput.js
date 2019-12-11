@@ -3,7 +3,6 @@ class UserInput {
   constructor() {
     this.searchBtn = document.querySelector('.main__search-btn');
     this.imgContainerWidth = window.innerWidth;
-    console.log('Window width: ', this.windowWidth);
     this.eventHandlers();
     this.setWidth();
   }
@@ -24,7 +23,7 @@ class UserInput {
       this.query = document.getElementById('query').value;
       this.gifSearch();
     } else {
-      this.query = 'random';
+      this.query = 'Christmas';
       console.log(this.query);
       this.gifSearch();
     }
