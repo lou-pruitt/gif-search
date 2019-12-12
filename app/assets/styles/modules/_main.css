@@ -1,11 +1,12 @@
 .main {
   display: flex;
   flex-direction: column;
+  margin: 0 auto 0;
   &__label {
     text-align: center;
   }
   &__search-btn {
-    margin: 10px auto 0px;
+    margin: 20px auto 0px;
     background-color: black;
     border-color: white;
     border-radius: 10%;
@@ -16,8 +17,11 @@
     text-align: center;
   }
   &__gif {
-    width: 100%;
-    max-height: 100%;
-    height: auto;
+    width: auto;
+    height: 110px;
+    padding: 0 2px;
+  }
+  &__query {
+    margin: 0px auto;
   }
 }
