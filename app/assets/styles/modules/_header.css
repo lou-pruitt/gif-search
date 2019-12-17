@@ -3,9 +3,8 @@
   display: flex;
   justify-content: center;
   background-color: crimson;
-  padding-bottom: 5px;
   &__title {
-    margin: 10px 0 0;
+    margin: 5px 0 0;
   }
   &__h-line {
     margin: 3px 0;
