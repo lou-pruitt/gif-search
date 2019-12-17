@@ -6,7 +6,7 @@
     text-align: center;
   }
   &__search-btn {
-    margin: 20px auto 0px;
+    margin: 20px auto;
     background-color: black;
     border-color: white;
     border-radius: 10%;
@@ -17,8 +17,8 @@
     text-align: center;
   }
   &__gif {
-    width: auto;
-    height: 110px;
+    width: 90%;
+    height: auto;
     padding: 0 2px;
   }
   &__query {
