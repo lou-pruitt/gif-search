@@ -37,8 +37,9 @@ class UserInput {
     let limit = 1;
     let rating = 'g';
     let offset = this.randomNumber();
+    let api_key = process.env.API_KEY;
 
-    let url = `${searchEndPoint}&api_key=${process.env.API_KEY}&q=${this.query}&limit=${limit}&rating=${rating}&offset=${offset}`;
+    let url = `${searchEndPoint}&api_key=${api_key}&q=${this.query}&limit=${limit}&rating=${rating}&offset=${offset}`;
     fetch(url)
       .then(response => {
         return response.json();
