@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fse = require('fs-extra');
 const Dotenv = require('dotenv-webpack');
-require('dotenv').config({ path: __dirname + '/.env' });
+require('dotenv').config();
 
 const postCSSPlugins = [
   require('postcss-import'),
