@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fse = require('fs-extra');
+const Dotenv = require('dotenv-webpack');
+require('dotenv').config({ path: __dirname + '/.env' });
 
 const postCSSPlugins = [
   require('postcss-import'),
@@ -40,6 +42,8 @@ let pages = fse
       template: `./app/${page}`
     });
   });
+
+pages.unshift(new Dotenv());
 
 let config = {
   entry: './app/assets/scripts/App.js',
