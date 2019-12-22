@@ -43,7 +43,11 @@ let pages = fse
     });
   });
 
-pages.unshift(new Dotenv());
+pages.unshift(
+  new Dotenv({
+    systemvars: true
+  })
+);
 
 let config = {
   entry: './app/assets/scripts/App.js',
