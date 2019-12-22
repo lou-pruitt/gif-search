@@ -2,11 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-      user-scalable="no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="Description" content="Author: Lou Pruitt, App: Gif search" />
     <title>Gif Search</title>
@@ -18,19 +14,23 @@
         <hr class="header__h-line" />
         <img src="./assets/images/giphy_logo.png" alt="Giphy Logo" />
       </div>
+      <div class="header__search-container">
+        <label class="header__search-containerlabel" for="query"
+          >Happy Holidays!</label
+        >
+        <input
+          name="query"
+          id="query"
+          placeholder="Type keyword here"
+          class="header__search-container__query"
+          type="text"
+          autocomplete="off"
+          required
+        />
+        <button class="header__search-container__search-btn">Search</button>
+      </div>
     </header>
-    <main class="main">
-      <label class="main__label" for="query">Happy Holidays!</label>
-      <input
-        name="query"
-        id="query"
-        placeholder="Type keyword here"
-        class="main__query"
-        type="text"
-        autocomplete="off"
-        required
-      />
-      <button class="main__search-btn">Search</button>
+    <main id="main" class="main">
       <div id="gif-area" class="main__img-container"></div>
 
       <div id="gif-modal" class="modal">

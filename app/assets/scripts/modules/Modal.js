@@ -1,6 +1,5 @@
 class Modal {
-  constructor(gif) {
-    this.gifElement = gif;
+  constructor() {
     this.eventHandlers();
     this.gifModal();
   }

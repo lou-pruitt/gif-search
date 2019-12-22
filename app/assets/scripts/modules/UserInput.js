@@ -3,7 +3,9 @@ let modal = new Modal();
 
 class UserInput {
   constructor() {
-    this.searchBtn = document.querySelector('.main__search-btn');
+    this.searchBtn = document.querySelector(
+      '.header__search-container__search-btn'
+    );
     this.image = document.getElementsByTagName('img');
     this.imgContainerWidth = window.innerWidth;
     this.gifId = 0;
@@ -33,13 +35,19 @@ class UserInput {
   }
 
   gifSearch() {
+    this.gifArea = document.getElementById('gif-area');
+    if (this.gifArea.hasChildNodes()) {
+      for (let index = 20; index > 0; index--) {
+        this.gifArea.removeChild(this.gifArea.childNodes[0]);
+      }
+    }
     let searchEndPoint = 'https://api.giphy.com/v1/gifs/search?';
-    let limit = 1;
+    let limit = 20;
     let rating = 'g';
     let offset = this.randomNumber();
     let api_key = process.env.API_KEY;
 
-    let url = `${searchEndPoint}&api_key=${api_key}&q=${this.query}&limit=${limit}&rating=${rating}&offset=${offset}`;
+    let url = `${searchEndPoint}&api_key=${api_key}&q=${this.query}&limit=${limit}&rating=${rating}&offset=${offset}&downsized`;
     fetch(url)
       .then(response => {
         return response.json();
@@ -58,25 +66,27 @@ class UserInput {
   }
 
   buildGifs(json) {
-    this.gifs = json.data
-      .map(gif => gif.id)
-      .map(gifId => {
-        this.theGif = `https://media.giphy.com/media/${gifId}/giphy.gif`;
-      });
-    this.gifData = json.data[0];
-    this.imgAlt = json.data[0].title;
-    this.createGifElement();
+    this.gifArray = json.data;
+    for (
+      this.gifIndex = 0;
+      this.gifIndex < this.gifArray.length;
+      this.gifIndex++
+    ) {
+      const gif = this.gifArray[this.gifIndex];
+      this.gifImage = gif.images.downsized_medium.url;
+      this.imgAlt = gif.title;
+      this.createGifElement();
+      this.injectGifs();
+    }
   }
 
   createGifElement() {
-    this.gifArea = document.getElementById('gif-area');
     this.gifElement = document.createElement('img');
     this.gifElement.classList.add('main__gif');
     this.gifId++;
     this.gifElement.setAttribute('id', this.gifId);
-    this.gifElement.src = this.theGif;
+    this.gifElement.src = this.gifImage;
     this.gifElement.alt = this.imgAlt;
-    this.injectGifs();
   }
 
   injectGifs() {
