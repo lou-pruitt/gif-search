@@ -1,12 +1,36 @@
 .header {
   color: white;
   display: flex;
+  width: 100%;
   justify-content: center;
   background-color: crimson;
+  position: fixed;
+  z-index: 1;
+  &__search-container {
+    margin: auto;
+    text-align: center;
+  }
   &__title {
     margin: 5px 0 0;
   }
   &__h-line {
     margin: 3px 0;
+  }
+}
+
+@mixin atSmall {
+  .header {
+    div {
+      display: inherit;
+    }
+    &__title {
+      margin-left: auto;
+    }
+    &__h-line {
+      display: none;
+    }
+    img {
+      height: 50%;
+    }
   }
 }

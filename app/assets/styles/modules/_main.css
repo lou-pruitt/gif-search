@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto 0;
+  position: relative;
+  top: 85px;
   &__label {
     text-align: center;
   }
@@ -17,11 +19,22 @@
     text-align: center;
   }
   &__gif {
-    width: 90%;
-    height: auto;
+    height: 100px;
     padding: 0 2px;
   }
   &__query {
     margin: 0px auto;
+  }
+}
+
+@mixin atSmall {
+  .main {
+    top: 50px;
+  }
+}
+
+@mixin atMedium {
+  .main__gif {
+    height: 162px;
   }
 }

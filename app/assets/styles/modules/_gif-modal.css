@@ -21,8 +21,8 @@
   &__content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    max-width: 375px;
+    max-height: 490px;
   }
   &__close {
     position: absolute;
@@ -63,13 +63,15 @@
     transform: scale(1);
   }
 }
-@media only screen and (min-width: 300px) {
+@mixin atSmall {
   .modal__content {
-    width: 95%;
+    height: 54%;
+    width: auto;
   }
 }
-@media only screen and (min-width: 600px) {
+@mixin atMedium {
   .modal__content {
-    width: 65%;
+    height: 62%;
+    width: auto;
   }
 }
