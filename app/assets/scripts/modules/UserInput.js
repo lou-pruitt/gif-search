@@ -11,6 +11,7 @@ class UserInput {
     this.gifId = 0;
     this.eventHandlers();
     this.setWidth();
+    document.onload = this.searchTerm();
   }
 
   eventHandlers() {
