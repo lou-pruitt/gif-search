@@ -75,7 +75,11 @@ class UserInput {
       this.gifIndex++
     ) {
       const gif = this.gifArray[this.gifIndex];
-      this.gifImage = gif.images.downsized_medium.url;
+      if (this.imgContainerWidth > 992) {
+        this.gifImage = gif.images.original.url;
+      } else {
+        this.gifImage = gif.images.downsized_medium.url;
+      }
       this.imgAlt = gif.title;
       this.createGifElement();
       this.injectGifs();
