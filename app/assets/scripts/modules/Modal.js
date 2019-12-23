@@ -8,7 +8,7 @@ class Modal {
     document.addEventListener(
       'click',
       event => {
-        if (event.target.matches('.main__gif')) {
+        if (event.target.matches('.main__img-container__gif')) {
           this.currentGif = event.target;
           this.createModal();
         }

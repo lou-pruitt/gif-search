@@ -17,10 +17,11 @@
   &__img-container {
     height: auto;
     text-align: center;
-  }
-  &__gif {
-    height: 100px;
-    padding: 0 2px;
+
+    &__gif {
+      height: 100px;
+      padding: 0 2px;
+    }
   }
   &__query {
     margin: 0px auto;
@@ -34,7 +35,13 @@
 }
 
 @mixin atMedium {
-  .main__gif {
-    height: 162px;
+  .main {
+    top: 80px;
+
+    &__img-container {
+      &__gif {
+        height: 195px;
+      }
+    }
   }
 }

@@ -15,14 +15,16 @@
   top: 0;
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.9);
   &__content {
     margin: auto;
     display: block;
-    max-width: 375px;
-    max-height: 490px;
+    max-width: 360px;
+    max-height: 400px;
   }
   &__close {
     position: absolute;
@@ -53,7 +55,7 @@
 .modal__content,
 #caption {
   animation-name: zoom;
-  animation-duration: 0.6s;
+  animation-duration: 1s;
 }
 @keyframes zoom {
   from {
@@ -63,15 +65,26 @@
     transform: scale(1);
   }
 }
+
 @mixin atSmall {
   .modal__content {
-    height: 54%;
-    width: auto;
+    max-height: 205px;
   }
 }
+
 @mixin atMedium {
   .modal__content {
-    height: 62%;
+    max-height: 800px;
+    max-width: 780px;
+    width: 80%;
+  }
+}
+
+@mixin atLarge {
+  .modal__content {
+    max-width: 100%;
+    max-height: 500px;
+    height: 100%;
     width: auto;
   }
 }
