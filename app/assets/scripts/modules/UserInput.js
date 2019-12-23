@@ -25,6 +25,7 @@ class UserInput {
   }
 
   searchTerm() {
+    this.gifId = 0;
     this.validInput = document.getElementById('query').validity.valid;
     if (this.validInput) {
       this.query = document.getElementById('query').value;
@@ -83,7 +84,7 @@ class UserInput {
 
   createGifElement() {
     this.gifElement = document.createElement('img');
-    this.gifElement.classList.add('main__gif');
+    this.gifElement.classList.add('main__img-container__gif');
     this.gifId++;
     this.gifElement.setAttribute('id', this.gifId);
     this.gifElement.src = this.gifImage;

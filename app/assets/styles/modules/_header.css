@@ -6,31 +6,57 @@
   background-color: crimson;
   position: fixed;
   z-index: 1;
+  &__name-container {
+    &__title {
+      margin: 5px 0 0;
+    }
+    &__h-line {
+      margin: 3px 0;
+    }
+  }
   &__search-container {
     margin: auto;
     text-align: center;
-  }
-  &__title {
-    margin: 5px 0 0;
-  }
-  &__h-line {
-    margin: 3px 0;
   }
 }
 
 @mixin atSmall {
   .header {
-    div {
+    &__name-container {
       display: inherit;
+      &__title {
+        margin-right: auto;
+      }
+      &__h-line {
+        display: none;
+      }
+      img {
+        height: 50%;
+      }
     }
-    &__title {
-      margin-left: auto;
+    &__search-container {
+      display: inherit;
+      padding: 0 5px;
     }
-    &__h-line {
-      display: none;
+  }
+}
+
+@mixin atMedium {
+  .header {
+    &__name-container {
+      &__title {
+        font-size: 4rem;
+      }
     }
-    img {
-      height: 50%;
+  }
+}
+
+@mixin atMedium {
+  .header {
+    &__search-container {
+      &__label {
+        padding: 0 20px;
+      }
     }
   }
 }
