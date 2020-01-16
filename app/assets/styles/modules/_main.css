@@ -1,6 +1,4 @@
 .main {
-  display: flex;
-  flex-direction: column;
   margin: 0 auto 0;
   position: relative;
   top: 85px;
@@ -15,12 +13,13 @@
     color: white;
   }
   &__img-container {
-    height: auto;
-    text-align: center;
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     &__gif {
+      width: auto;
       height: 100px;
-      padding: 0 2px;
     }
   }
   &__query {
