@@ -49,13 +49,12 @@ class UserInput {
     let offset = this.randomNumber();
     let api_key = process.env.API_KEY;
 
-    let url = `${searchEndPoint}&api_key=${api_key}&q=${this.query}&limit=${limit}&rating=${rating}&offset=${offset}/200`;
+    let url = `${searchEndPoint}&api_key=${api_key}&q=${this.query}&limit=${limit}&rating=${rating}&offset=${offset}`;
     fetch(url)
       .then(response => {
         return response.json();
       })
       .then(json => {
-        console.log('json', json.data);
         this.buildGifs(json);
       })
       .catch(err => {
