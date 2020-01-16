@@ -31,7 +31,7 @@ class UserInput {
       this.query = document.getElementById('query').value;
       this.gifSearch();
     } else {
-      this.query = 'Christmas';
+      this.query = 'Cats';
       this.gifSearch();
     }
   }
@@ -39,22 +39,23 @@ class UserInput {
   gifSearch() {
     this.gifArea = document.getElementById('gif-area');
     if (this.gifArea.hasChildNodes()) {
-      for (let index = 20; index > 0; index--) {
+      for (let index = 10; index > 0; index--) {
         this.gifArea.removeChild(this.gifArea.childNodes[0]);
       }
     }
     let searchEndPoint = 'https://api.giphy.com/v1/gifs/search?';
-    let limit = 20;
+    let limit = 10;
     let rating = 'g';
     let offset = this.randomNumber();
     let api_key = process.env.API_KEY;
 
-    let url = `${searchEndPoint}&api_key=${api_key}&q=${this.query}&limit=${limit}&rating=${rating}&offset=${offset}&downsized`;
+    let url = `${searchEndPoint}&api_key=${api_key}&q=${this.query}&limit=${limit}&rating=${rating}&offset=${offset}/200`;
     fetch(url)
       .then(response => {
         return response.json();
       })
       .then(json => {
+        console.log('json', json.data);
         this.buildGifs(json);
       })
       .catch(err => {
